@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Arise Admin</title>
+    <style>
+      /* Painted before React mounts so a reload in dark mode doesn't flash white. */
+      html {
+        background: #f1f3f6;
+      }
+      html[data-theme='dark'] {
+        background: #0f1115;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font: 14px -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color: #878787;
+      }
+    </style>
+    <script>
+      // data-theme is read by the pre-paint CSS above and by the theme store.
+      try {
+        var saved = localStorage.getItem('arise.theme');
+        var mode =
+          saved === 'dark' || saved === 'light'
+            ? saved
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.setAttribute('data-theme', mode);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"><div id="boot">Loading Arise Admin…</div></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

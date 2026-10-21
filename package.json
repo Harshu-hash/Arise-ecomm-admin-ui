@@ -1,0 +1,65 @@
+{
+  "name": "arise-admin-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Arise marketplace \u2014 platform admin panel (frontend only)",
+  "scripts": {
+    "dev": "node api.js && vite --mode mock",
+    "dev:live": "vite --mode live",
+    "build": "node api.js && vite build --mode live",
+    "build:mock": "vite build --mode mock",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx --max-warnings 0",
+    "lint:fix": "eslint . --ext .js,.jsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "msw:init": "msw init public --save"
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.5.2",
+    "@dnd-kit/core": "6.3.1",
+    "@dnd-kit/sortable": "10.0.0",
+    "@dnd-kit/utilities": "3.2.2",
+    "@tanstack/react-query": "5.62.11",
+    "antd": "5.22.7",
+    "axios": "1.7.9",
+    "dayjs": "1.11.13",
+    "dompurify": "3.2.3",
+    "papaparse": "5.4.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.28.1",
+    "recharts": "2.15.0",
+    "xlsx": "0.18.5",
+    "zod": "3.24.1",
+    "zustand": "5.0.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "9.3.0",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.1.0",
+    "@testing-library/user-event": "14.5.2",
+    "@vitejs/plugin-react": "4.3.4",
+    "eslint": "8.57.1",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.3",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.16",
+    "jsdom": "25.0.1",
+    "msw": "2.7.0",
+    "prettier": "3.4.2",
+    "vite": "6.0.7",
+    "vitest": "2.1.8"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
